@@ -1,0 +1,13 @@
+log open test-script.log all
+^set use_status_window off
+^set autocreate_windows off
+^set -clear autocreate_query_level
+^set autoclose_windows off
+^set reuse_unused_windows on
+^set timestamp_format %H:%M:%S
+^set log_timestamp %H:%M:%S
+^set autolog_level all
+^load perl
+save
+^script exec $$^W = 1
+run "$W/test-script.pl"
